@@ -1,0 +1,26 @@
+<div>
+  <div id="map" style="height: 500px; width: 100%; position: relative"></div>
+
+  <div>
+    <button style="margin-right: 10px; margin-bottom: 10px" (click)="switchLayer(layers[0])">
+      Switch Population Density
+    </button>
+    <button style="margin-right: 10px; margin-bottom: 10px" (click)="switchLayer(layers[1])">
+      Switch Probabilities of Urban Expansion
+    </button>
+
+    <label for="Overlay">Overlay  the map </label>
+    <input
+      name="Overlay"
+      type="checkbox"
+      (change)="toggleLayer($event.target)"
+    />
+    
+    <input
+      type="text"
+      [(ngModel)]="location"
+      placeholder="Enter a location"
+    />
+    <button (click)="searchLocation()">Search</button>
+  </div>
+</div>
